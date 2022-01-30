@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+ class PostsController < ApplicationController
 
     def index
         
@@ -7,6 +7,10 @@ class PostsController < ApplicationController
     # adding new post 
     def new 
 
+    end
+
+    def create
+        render plain: params[:post].inspect
     end
 
 end
