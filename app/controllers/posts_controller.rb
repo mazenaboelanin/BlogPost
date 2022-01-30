@@ -1,7 +1,11 @@
  class PostsController < ApplicationController
 
     def index
-        
+        @posts = Post.all
+    end
+
+    def show
+        @post = Post.find(params[:id])
     end
 
     # adding new post 
@@ -10,7 +14,14 @@
     end
 
     def create
-        render plain: params[:post].inspect
+        #render plain: params[:post].inspect
+        @post = Post.new(post_params)
+        @post.save
+        redirect_to @post # load show view
+    end
+
+    private def post_params
+        params.require(:post).permit(:title, :body)
     end
 
 end
