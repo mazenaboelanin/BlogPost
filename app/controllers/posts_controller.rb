@@ -4,4 +4,9 @@ class PostsController < ApplicationController
         
     end
 
+    # adding new post 
+    def new 
+
+    end
+
 end

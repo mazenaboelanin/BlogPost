@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   # Regular Route
   get 'about' => 'pages#about'
+
+  # Resource Route 
+  resources :posts
 end
